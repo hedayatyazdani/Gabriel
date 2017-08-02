@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link type="text/css" rel="stylesheet" media="screen and (max-height:1200px)" href="res/libre.css"/>
+		<link type="text/css" rel="stylesheet" media="screen and (min-height:1201px)" href="res/libre-mob.css"/>
+
+		<link type="text/css" rel="stylesheet" media="screen and (max-height:1200px)" href="res/css/gabriel.css"/>
+		<link type="text/css" rel="stylesheet" media="screen and (min-height:1201px)" href="res/css/gabriel-mob.css"/>
+
+			<script type="text/javascript" src="cordova.js"></script>
+			<script type="text/javascript" src="core/js/appMode.js"></script>
+
+		<script type="text/javascript" src="core/libre1.js"></script>
+		<script type="text/javascript" src="core/js/Gabriel.js"></script>
+		<script type="text/javascript" src="core/jetframe01.js"></script>
+		<script type="text/javascript" src="core/NetworkTransfer.js"></script>
+		<script type="text/javascript" src="core/jetapp.js"></script>
+		<script type="text/javascript" src="core/js/__init__.js"></script>
+		<script type="text/javascript" src="core/js/events.js"></script>
+	</head>
+	<body onload="__init__();" onclick="if(!Libre.sidebar.pined)Libre.sidebar.visible(false);">
+		<div id="mainMenuPan" onclick="Libre.stopPropagation(event);"><ul id="menuItemList"><li>Home</li><li>About</li></ul><ul id="menuItemTools"><li>Setting</li><li>Search</li></ul></div>
+		<div id="extraPan" onclick="Libre.stopPropagation(event);">Extra bars -for fixed positioned dialog, originally hidden</div>
+		<div id="workPan" class="workPanNormal">Work area</div>
+		<div id="sidebar" class="sidebar sidebarNormal" onclick="Libre.stopPropagation(event);">sidebar</div>
+		<div id="statusPan" onclick="Libre.stopPropagation(event);">Status area -dynamic size</div>
+		<div id="floatbar" class="invisibleFloatbar" onclick="Libre.stopPropagation(event);">Float bar is here</div>
+		<div id="loginDlg" style="display:none"><button onclick="login();" class="blue btn">Login</button></div>
+	<body>
+</html>

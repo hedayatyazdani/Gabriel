@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.jointab.gabriel" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Gabriel for cordova</name>
+    <description>
+        A blank PhoneGap app.
+    </description>
+    <author email="support@phonegap.com" href="http://phonegap.com">
+        PhoneGap Team
+    </author>
+    <content src="index.html" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    <plugin name="cordova-plugin-inappbrowser"/>
+	
+	
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+		<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data	
+					android:scheme="http"
+					android:host="gabriel.jointab.com"
+					android:path="/"
+					android:pathPrefix="*" 
+				/>
+		</intent-filter>
+        </config-file>
+    </platform>
+    <!--<plugin spec="https://git.apache.org/cordova-plugin-inappbrowser.git" source="git" />-->
+<!--
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" version="1.0.1" />-->
+    <!-- ios
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+  -->
+</widget>

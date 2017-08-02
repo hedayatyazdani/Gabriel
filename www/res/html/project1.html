@@ -1,0 +1,87 @@
+<html>
+	<head>
+	<style>
+		.simpleDialog{font-size:2em;position: relative; height: 100%;}
+		.simpleDialog>table *{font-size: 1em;transition: 0.3s}
+		.simpleDialog> table> input,#simpleDialog>table> textarea{width: 50vw}
+		.simpleDialog> table> textarea{height: 30vh}
+		.simpleDialog table{margin-top:7vh;}
+
+		#taskArea{position: absolute;top:20vh;bottom: 2vh;left:2vh;display: flex;flex-direction: column;flex-wrap: wrap;cloum-gap:0;overflow-x: scroll;}
+		#taskEdit{position: absolute;top:0px; bottom: 0px; right: 0px;background-color: #EFE5E5;font-size:0.5em;padding:10px;}
+		#createTaskBtn{position: absolute;top:2vh;border: 1px solid #3F7FBF;border-bottom: 0.5vh solid #3F7FBF;padding:1vh;padding-right: 3vh;background-color: rgba(243,243,243,0.5);cursor: pointer;}
+		#createTaskBtn img{width: 5vh;height: 5vh;margin:1vh;vertical-align: middle;}
+
+		#taskEdit input,#taskEdit textarea{width: calc(100% - 20px)}
+		.normalDialog #taskArea{right:2vh;}
+		.normalDialog #taskEdit{left:100vw;}
+		.normalDialog #createTaskBtn{right:5vh}
+
+		.detailDialog #taskArea{right:30vw;}
+		.detailDialog #taskEdit{left:70vw;}
+		.detailDialog #createTaskBtn{right: 35vw}
+
+		.task2{display: inline-block;padding:5px; margin:10px;width: 15vw;overflow: hidden;word-wrap: break-word;}
+		.task_stat0{border:1px solid blue; border-bottom: 1vh solid blue}
+		.task_stat1{border:1px solid orange; border-bottom: 1vh solid orange}
+
+		#jobArea input{width: auto; transform: scale(2)}
+		#jobArea>div{margin-top:10pt;}
+	</style>
+	</head>
+	<body>
+	<!--
+		<div class="simpleDialog">
+			Define a new Project
+			<table>
+			<tr>
+			<td>Name</td> <td><input type="text" placeholder="The Project Name" id="titleTxb" value="%title%"/></td>
+			</tr>
+
+			<tr>
+			<td>Description</td> <td><textarea id="descriptionTxb">%description%</textarea></td>
+			</tr>
+			</table>
+			<button id="nextBtn" style="position: absolute;bottom: 5vh;right: 5vh" class="blue btn" onclick="Project.onSave(); Libre.work.clear(); Project.buildForm(Project.activeObject,3,'workPan');">Next</button>
+		</div>
+	-->
+
+		<div class="simpleDialog detailDialog">
+			<div onclick="Project.onAddTask()" id="createTaskBtn">
+			<img src="../../res/images/svg/add.svg"/>
+			<span style="vertical-align: middle;font-size:0.95em">Add Task</span>
+			</div>
+			<p>%title%</p>
+			<div id="taskArea"><div class="task2 task_stat0">%title%</div> <div class="task2 task_stat1">Task # 1</div></div>
+			<div id="taskEdit">
+			<p>
+				title:
+				<input type="text" id="titleTxb" value="%title%" onchange="Task.onSave()">
+			</p>
+			<p>
+				description:
+				<textarea id="descriptionTxb" onchange="Task.onSave()">%description%</textarea>
+			</p>
+			<p>
+			status:
+			<select id="statusCmb" onchange="Task.onSave()">
+				<option value="0">in progress</option>
+				<option value="1">completed</option>
+				<option value="2">issued</option>
+				<option value="3">depricated</option>
+			</select>
+			</p>
+			<p>
+				Check List:
+				<input type="text" id="newJobTxb" placeholder="write your check list and press enter" onkeypress="Task.onAddJob(event)"/>
+				<hr/>
+				<div id="jobArea">
+				</div>
+			</p>
+			<p><button class="blue btn" onclick="Project.activeObject.dlg.setAttribute('class','simpleDialog normalDialog');">close</button>
+			</p>
+			</div>
+
+		</div>
+	</body>
+</html>

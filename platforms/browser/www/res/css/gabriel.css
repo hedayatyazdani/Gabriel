@@ -1,0 +1,46 @@
+.simpleDialog{font-size:2em;position: relative; height: 100%;}
+.simpleDialog>table *{font-size: 0.85em;transition: 0.3s}
+.simpleDialog> table input,.simpleDialog> table textarea{width: 50vw}
+.simpleDialog> table td{vertical-align: top}
+.simpleDialog> table textarea{height: 20vh}
+.simpleDialog table{margin-top:7vh;}
+
+#taskArea{position: absolute;top:20vh;bottom: 2vh;left:2vh;display: flex;flex-direction: column;flex-wrap: wrap;cloum-gap:0;overflow-x: scroll;}
+#taskEdit{position: absolute;top:0px; bottom: 0px; right: 0px;background-color: #EFE5E5;font-size:0.5em;padding:10px;}
+#createTaskBtn{font-size:0.6em;position: absolute;top:2vh;border: 1px solid #3F7FBF;border-bottom: 0.5vh solid #3F7FBF;padding:1vh;padding-right: 3vh;background-color: rgba(243,243,243,0.5);cursor: pointer;}
+#createTaskBtn img{width: 3vh;height: 3vh;margin:1vh;vertical-align: middle;}
+#taskEdit p{margin-bottom: 1.5vh}
+#taskEdit input,#taskEdit textarea{width: calc(100% - 20px)}
+.normalDialog #taskArea{right:2vh;}
+.normalDialog #taskEdit{left:100vw;}
+.normalDialog #createTaskBtn{right:5vh}
+
+.detailDialog #taskArea{right:30vw;}
+.detailDialog #taskEdit{left:70vw;}
+.detailDialog #createTaskBtn{right: 35vw}
+
+.task2{display: inline-block;padding:5px; margin:10px;width: 15vw;overflow: hidden;word-wrap: break-word;font-size:0.59em;height: 1em}
+.task_stat0{border:1px solid blue; border-bottom: 1vh solid blue}
+.task_stat1{border:1px solid green; border-bottom: 1vh solid green}
+.task_stat2{border:1px solid red; border-bottom: 1vh solid red}
+.task_stat3{border:1px solid orange; border-bottom: 1vh solid orange}
+
+.selected0{background-color: blue; color:white;}
+.selected1{background-color: green; color:white;}
+.selected2{background-color: red; color:white;}
+.selected3{background-color: orange;}
+
+#jobArea input{width: auto;}
+#jobArea>div{margin-top:10pt;}
+
+
+.project2{display: inline-block;width: 25vw; height: 1em; border:1px solid blue; border-top:1vh solid blue; cursor: pointer;padding:10px;}
+
+#loginDlg{
+  position: fixed; top:0px; right: 0px; bottom: 0px; left:0px; background-image: url('../svg/login-bg.svg'); background-size: cover;
+}
+#loginDlg button{
+  position: fixed; font-size: 1em; top: 47vh; height: 6vh; left: 45vw; width: 10vw; border:1px solid green;
+  border-bottom: 1vh solid green; background-color: rgba(50,50,50,0.5); color:white; border-bottom-left-radius: 3vh;
+  border-top-right-radius: 3vh; cursor: pointer;
+}

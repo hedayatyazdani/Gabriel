@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-simple-android-url-intent-filter" version="0.0.2">
+    <name>Simple Android URL Intent Filter</name>
+    <description>Add the variable DOMAIN_NAME with the value set as the top level domain you wish to direct to your app, and optionally the variable PATH_PREFIX. An Android Intent Filter will be added to the App that redirects the following URLs to your App: (http[s]://DOMAIN_NAME, http[s]://DOMAIN_NAME/, http[s]://DOMAIN_NAME/PATH_PREFIX*)</description>
+    <license>BSD-3</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <preference name="DOMAIN_NAME" default=" " />
+    <preference name="PATH_PREFIX" default="*" />
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+		<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data	
+					android:scheme="http"
+					android:scheme="https"
+					android:host="gabriel.jointab.com"
+					android:path="/"
+					android:path=""
+					android:pathPrefix="$PATH_PREFIX" 
+				/>
+		</intent-filter>
+        </config-file>
+    </platform>
+</plugin>

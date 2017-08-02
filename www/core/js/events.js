@@ -1,0 +1,5 @@
+function onProjectMenu(){
+	Libre.work.show("<div id=\"startPage\" style=\"position: relative;height: 100%;\"><img src=\"res/images/jpg/bg1.jpg\" style=\"width: 100%;height: 100%; object-fit: cover;position: absolute;top:0px;left:0px\"/><div id=\"startPageDialog\" style=\"background: rgba(243,243,243,0.8);position: absolute;top:0px; left:0px; bottom: 0px; right: 0px;\"><div onclick=\"Libre.work.clear(); var p=new Project(); Project.buildForm(p,1,'workPan');\" style=\"position: absolute;top:5vh;left:5vh;border: 1px solid #3F7FBF;border-bottom: 0.5vh solid #3F7FBF;padding:1vh;padding-right: 3vh;background-color: rgba(243,243,243,0.5);cursor: pointer;\"><img src=\"res/images/svg/pen.svg\" style=\"width: 5vh;height: 5vh;margin:1vh;vertical-align: middle;\"/><span style=\"vertical-align: middle;font-size:2em\">Create Project</span></div><div id=\"projectArea\" style=\"position: absolute; top: 17vh;left:5vh; bottom: 5vh;right: 5vh;\"></div></div></div>");
+	LU.globalCallback=Project.listItems;
+	Project.search();
+}
